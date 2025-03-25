@@ -1,0 +1,41 @@
+cidr_block="10.0.0.0/16"
+vpc_name="nile"
+subnets_cidr_block= ["10.0.1.0/24","10.0.2.0/24","10.0.3.0/24"]
+subnets_az =["eu-west-1a","eu-west-1a","eu-west-1b"]
+subnet_name = "nile"
+route_name= "internet-route"
+
+
+ecs_cluster_name = "nile_hello"
+ecs_instance_name = "ecs_nile_ec2"
+ecs_instance_type = "t2.micro"
+ecs_asg_min_size = 1
+ecs_asg_max_size = 1
+
+ecs_sg_name = "ecs_sg"
+ecs_num_of_rules = 2
+ecs_rule_type = ["ingress","egress"]
+ecs_from_port = [-1,-1]
+ecs_to_port = [-1,-1]
+ecs_protocol = [-1,-1]
+ecs_sg_cidr_blocks = ["0.0.0.0/0"] 
+
+
+ecs_task_family = "api"
+ecs_container_name = "hello-api-task"
+ecs_container_cpu = 265
+ecs_container_memory = 512
+ecs_container_port = 4000
+alb_name = "nile-api-lb"
+lb_target_name = "api-target"
+lb_target_port = 4000
+lb_target_protocol = "HTTP"
+lb_target_health_check = "/"
+
+alb_sg_name = "alb-sg"
+alb_num_of_rules = 3
+alb_rule_type = ["ingress","ingress","egress"]
+alb_from_port = [80,443,-1]
+alb_to_port = [80,443,-1]
+alb_protocol = ["tcp","tcp",-1]
+alb_sg_cidr_blocks = ["0.0.0.0/0"] 

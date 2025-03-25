@@ -68,17 +68,17 @@ Ensure you have the following installed:
 git clone https://github.com/your-repo/hello-world-api.git
 cd hello-world-api
 ```
-### 3. Edit values for your infra in niletask.tfvars
+### 3. Edit values for Your Infra
 
 ```sh
 cd terraform
-vim niletask.tfvars
+cp var.example  values.tfvars
 ```
 ### 4. Deploy Infrastructure with Terraform
 
 ```sh
 terraform init
-terraform apply -auto-approve -var-file niletask.tfvars
+terraform apply -auto-approve -var-file values.tfvars
 ```
 
 ### 5. Verify Deployment
