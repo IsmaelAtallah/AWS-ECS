@@ -71,7 +71,7 @@ cd hello-world-api
 ### 3. Edit values for Your Infra
 
 ```sh
-cd terraform
+cd infra
 cp var.example  values.tfvars
 ```
 ### 4. Deploy Infrastructure with Terraform
@@ -136,7 +136,7 @@ terraform apply -auto-approve -var-file values.tfvars
 To delete all resources:
 
 ```sh
-cd terraform
-terraform destroy -auto-approve
+cd infra
+terraform destroy -auto-approve -var-file values.tfvars
 ```
 
